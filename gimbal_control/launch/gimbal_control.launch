@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find usb_cam)/launch/usb_cam-test.launch"/>
+  <node pkg="gimbal_control" name="gimbal_control" type="fire_track_PID.py"/>
+  <node pkg="opencv" name="find_ball" type="find_ball.py"/>
+  <node pkg="rosserial_python" name="serial_node" type="serial_node.py" args="/dev/ttyACM0"/>
+
+</launch>
